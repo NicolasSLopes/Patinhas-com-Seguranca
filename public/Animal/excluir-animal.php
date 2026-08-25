@@ -8,7 +8,9 @@ $sql = "DELETE FROM animal WHERE id_animal=?";
 
 $stmt = $conexao->prepare($sql);
 
-$stmt->execute([$id]);
+$stmt->bind_param("i", $id);
+
+$stmt->execute();
 
 header("Location: ../index.php");
 ?>

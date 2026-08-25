@@ -6,6 +6,8 @@
 
     $stmt = $conexao->prepare("INSERT INTO cliente (nome_cliente) VALUES (?)");
 
-    $stmt->execute([$nomeCliente]);
+    $stmt->bind_param("s", $nomeCliente);
+
+    $stmt->execute();
 
 ?>

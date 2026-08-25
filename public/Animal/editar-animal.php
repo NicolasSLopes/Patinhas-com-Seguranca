@@ -6,10 +6,11 @@ $id = $_GET["id_animal"];
 
 $stmt = $conexao->prepare("SELECT * FROM animal WHERE id_animal = ?");
 
-$stmt->execute([$id]);
+$stmt->bind_param("i", $id);
 
-$animal = $stmt->fetch(PDO::FETCH_ASSOC);
+$stmt->execute();
 
+$animal = $stmt->get_result()->fetch_assoc();
 
 ?>
 

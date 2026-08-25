@@ -7,6 +7,8 @@
 
     $stmt = $conexao->prepare("INSERT INTO  animal (nome_animal, id_cliente) VALUES (?, ?)");
 
-    $stmt->execute([$nomeAnimal, $idCliente]);
+    $stmt->bind_param("si", $nomeAnimal, $idCliente);
+
+    $stmt->execute();
 
 ?>

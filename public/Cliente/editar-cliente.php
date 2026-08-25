@@ -6,10 +6,13 @@ $id = $_GET["id_cliente"];
 
 $stmt = $conexao->prepare("SELECT * FROM cliente WHERE id_cliente = ?");
 
-$stmt->execute([$id]);
+$stmt->bind_param("i", $id);
 
-$cliente = $stmt->fetch(PDO::FETCH_ASSOC);
+$stmt->execute();
 
+$resultado = $stmt->get_result();
+
+$cliente = $resultado->fetch_assoc();
 ?>
 
 <!DOCTYPE html>
