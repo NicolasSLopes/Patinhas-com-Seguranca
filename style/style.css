@@ -1,39 +1,64 @@
 body {
 	margin: 0;
+	padding: 20px;
 	font-family: Arial, sans-serif;
-	background-color: white;
+	background-color: #f2f2f2;
 	color: black;
 }
 
-header {
+h1 {
 	padding: 20px;
 	text-align: center;
 	background-color: #82b2f0;
 	color: white;
 }
 
-main {
-	width: 90%;
-	max-width: 1000px;
-	margin: 20px auto;
-}
-
-section {
-	margin-bottom: 20px;
-	padding: 20px;
-	background-color: white;
-	border: 1px solid black;
-}
-
-h1,
 h2 {
-	margin-top: 0;
+	margin-top: 25px;
+	padding: 10px;
+	background-color: #d9e8f8;
 }
 
 form {
 	display: flex;
 	flex-direction: column;
 	gap: 8px;
+}
+
+.pagina-cadastro {
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+.pagina-cadastro h1 {
+	border-radius: 4px;
+}
+
+.formulario-cadastro {
+	padding: 24px;
+	background-color: white;
+	border: 1px solid #cccccc;
+	border-radius: 4px;
+}
+
+.formulario-cadastro label {
+	font-weight: bold;
+}
+
+.formulario-cadastro input,
+.formulario-cadastro select {
+	border: 1px solid #aaaaaa;
+	border-radius: 4px;
+}
+
+.acoes-formulario {
+	display: flex;
+	gap: 10px;
+	margin-top: 8px;
+}
+
+.acoes-formulario button {
+	margin-top: 0;
 }
 
 input,
@@ -57,14 +82,9 @@ button:hover {
 	background-color: black;
 }
 
-.listas {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 20px;
-}
-
 table {
 	width: 100%;
+	margin-bottom: 20px;
 	border-collapse: collapse;
 	background-color: white;
 }
@@ -81,12 +101,14 @@ th {
 }
 
 a {
+	display: inline-block;
+	padding: 10px;
 	margin-right: 8px;
-	color: rgb(81, 121, 230);
+	background-color: #6892ec;
+	color: white;
+	text-decoration: none;
 }
 
-@media (max-width: 700px) {
-	.listas {
-		grid-template-columns: 1fr;
-	}
+a:hover {
+	background-color: #3f65b5;
 }

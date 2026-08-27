@@ -36,6 +36,13 @@ $cliente = $resultado->fetch_assoc();
 
             <label for="titulo">Nome:</label>
             <input type="text" name="nome_cliente" value="<?php echo $cliente["nome_cliente"]?>">
+
+            <label for="titulo">Email:</label>
+            <input type="email" name="email_cliente" value="<?php echo $cliente["email_cliente"]?>">
+
+            <label for="titulo">Telefone:</label>
+            <input type="text" name="telefone_cliente" value="<?php echo $cliente["telefone_cliente"]?>">
+            
             <br>
             <button type="submit">Atualizar</button>
         </form>

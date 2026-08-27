@@ -35,6 +35,13 @@ $animal = $stmt->get_result()->fetch_assoc();
 
             <label for="titulo">Nome:</label>
             <input type="text" name="nome_animal" value="<?php echo $animal["nome_animal"]?>">
+
+            <label for="titulo">Raça:</label>
+            <input type="text" name="raca_animal" value="<?php echo $animal["raca_animal"]?>">
+
+            <label for="titulo">Idade:</label>
+            <input type="number" name="idade_animal" value="<?php echo $animal["idade_animal"]?>">
+            
             <br>
             <button type="submit">Atualizar</button>
         </form>
