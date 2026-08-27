@@ -1,6 +1,6 @@
 <?php
 
-include "../infra/conexao.php";
+include "../../infra/conexao.php";
 
 $id = $_GET["id_cliente"];
 
@@ -12,5 +12,6 @@ $stmt->bind_param("i", $id);
 
 $stmt->execute();
 
-header("Location: ../index.php");
+header("Location: ../../index.php");
+exit;
 ?>

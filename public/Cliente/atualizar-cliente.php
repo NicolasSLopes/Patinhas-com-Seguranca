@@ -1,6 +1,6 @@
 <?php 
 
-    include "../infra/conexao.php";
+    include "../../infra/conexao.php";
 
     $nomeCliente = $_POST['nome_cliente'];
     $idCliente = $_POST['id_cliente'];
@@ -10,5 +10,8 @@
     $stmt->bind_param("si", $nomeCliente, $idCliente);
     
     $stmt->execute();
+
+    header("Location: ../../index.php");
+    exit;
 
 ?>

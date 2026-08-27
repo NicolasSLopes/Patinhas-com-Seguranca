@@ -1,6 +1,6 @@
 <?php
 
-include "../infra/conexao.php";
+include "../../infra/conexao.php";
 
 $id = $_GET["id_animal"];
 
@@ -21,7 +21,7 @@ $animal = $stmt->get_result()->fetch_assoc();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patinhas Segurança</title>
-    <link rel="stylesheet" href="style/styles.css">
+    <link rel="stylesheet" href="../../style/style.css">
 </head>
 
 <body>
@@ -30,11 +30,11 @@ $animal = $stmt->get_result()->fetch_assoc();
     </header>
     <main>
         <h2>Editando o animal <?php echo $animal["nome_animal"]?>!</h2>
-        <form action="atualizar.php" method="POST">
-            <input type="hidden" name="id" value="<?php echo $animal["id_animal"]?>">
+        <form action="atualizar-animal.php" method="POST">
+            <input type="hidden" name="id_animal" value="<?php echo $animal["id_animal"]?>">
 
             <label for="titulo">Nome:</label>
-            <input type="name" name="nome" value="<?php echo $animal["nome_animal"]?>">
+            <input type="text" name="nome_animal" value="<?php echo $animal["nome_animal"]?>">
             <br>
             <button type="submit">Atualizar</button>
         </form>

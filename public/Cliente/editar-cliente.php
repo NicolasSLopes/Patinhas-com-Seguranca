@@ -1,6 +1,6 @@
 <?php
 
-include "../infra/conexao.php";
+include "../../infra/conexao.php";
 
 $id = $_GET["id_cliente"];
 
@@ -22,7 +22,7 @@ $cliente = $resultado->fetch_assoc();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patinhas Segurança</title>
-    <link rel="stylesheet" href="style/styles.css">
+    <link rel="stylesheet" href="../../style/style.css">
 </head>
 
 <body>
@@ -31,11 +31,11 @@ $cliente = $resultado->fetch_assoc();
     </header>
     <main>
         <h2>Editando o cliente <?php echo $cliente["nome_cliente"]?>!</h2>
-        <form action="atualizar.php" method="POST">
-            <input type="hidden" name="id" value="<?php echo $cliente["id_cliente"]?>">
+        <form action="atualizar-cliente.php" method="POST">
+            <input type="hidden" name="id_cliente" value="<?php echo $cliente["id_cliente"]?>">
 
             <label for="titulo">Nome:</label>
-            <input type="name" name="nome" value="<?php echo $cliente["nome_cliente"]?>">
+            <input type="text" name="nome_cliente" value="<?php echo $cliente["nome_cliente"]?>">
             <br>
             <button type="submit">Atualizar</button>
         </form>

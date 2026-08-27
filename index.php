@@ -59,14 +59,14 @@ $animais = mysqli_query($conexao, "SELECT animal.id_animal, animal.nome_animal, 
         <section class="listas">
             <div>
                 <h2>Clientes</h2>
-                <?php if ($clientes && mysqli_num_rows($clientes) > 0): ?>
+                <?php if ($clientes && mysqli_num_rows($clientes) > 0) { ?>
                     <table border="1">
                         <tr>
                             <th>ID</th>
                             <th>Nome</th>
                             <th>Ações</th>
                         </tr>
-                        <?php while ($cliente = mysqli_fetch_assoc($clientes)): ?>
+                        <?php while ($cliente = mysqli_fetch_assoc($clientes)) { ?>
                             <tr>
                                 <td><?php echo $cliente['id_cliente']; ?></td>
                                 <td><?php echo $cliente['nome_cliente']; ?></td>
@@ -75,12 +75,16 @@ $animais = mysqli_query($conexao, "SELECT animal.id_animal, animal.nome_animal, 
                                     <a href="public/Cliente/excluir-cliente.php?id_cliente=<?php echo $cliente['id_cliente']; ?>" onclick="return confirm('Deseja excluir este cliente?');">Excluir</a>
                                 </td>
                             </tr>
+                        <?php } ?>
                     </table>
+                        <?php } else { ?>
+                            <p>Nenhum cliente cadastrado.</p>
+                        <?php } ?>
             </div>
 
             <div>
                 <h2>Animais</h2>
-                <?php if ($animais && mysqli_num_rows($animais) > 0): ?>
+                <?php if ($animais && mysqli_num_rows($animais) > 0) { ?>
                     <table border="1">
                         <tr>
                             <th>ID</th>
@@ -88,7 +92,7 @@ $animais = mysqli_query($conexao, "SELECT animal.id_animal, animal.nome_animal, 
                             <th>Cliente</th>
                             <th>Ações</th>
                         </tr>
-                        <?php while ($animal = mysqli_fetch_assoc($animais)): ?>
+                        <?php while ($animal = mysqli_fetch_assoc($animais)) { ?>
                             <tr>
                                 <td><?php echo $animal['id_animal']; ?></td>
                                 <td><?php echo $animal['nome_animal']; ?></td>
@@ -98,7 +102,11 @@ $animais = mysqli_query($conexao, "SELECT animal.id_animal, animal.nome_animal, 
                                     <a href="public/Animal/excluir-animal.php?id_animal=<?php echo $animal['id_animal']; ?>" onclick="return confirm('Deseja excluir este animal?');">Excluir</a>
                                 </td>
                             </tr>
+                        <?php } ?>
                     </table>
+                        <?php } else { ?>
+                            <p>Nenhum animal cadastrado.</p>
+                        <?php } ?>
             </div>
         </section>
     </main>
